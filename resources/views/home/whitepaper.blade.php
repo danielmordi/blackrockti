@@ -189,8 +189,8 @@
         
         <p>
             For more information kindly visit:
-        <p>WEBSITE: <a href="https://bytegains.com/">http://www.bytegains.com/</a></p>
-        <p>E-MAIL US: support@bytegains.com</p>
+        <p>WEBSITE: <a href="https://blackrockti.org/">http://www.blackrockti.org/</a></p>
+        <p>E-MAIL US: support@blackrockti.org</p>
         </p>
         
         <h2>OUR PARTNERS</h2>

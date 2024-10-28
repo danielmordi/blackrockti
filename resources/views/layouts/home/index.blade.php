@@ -224,7 +224,7 @@
                             <h4>Contact Us </h4>
                             <div class="contacts">
                                 <div>
-                                    <span>support@bytegains.com</span>
+                                    <span>support@blackrockti.org</span>
                                 </div>
                                 {{-- <div>
                                     <span>00216 21 184 010</span>
