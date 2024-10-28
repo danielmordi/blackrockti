@@ -48,7 +48,7 @@ class AdminController extends Controller
     $transactions = TransactionHistory::where('user_id', $id)->latest()->paginate(10);
 
     $percentage = !isset($user->packages->percentage) ? '' : $user->packages->percentage;
-    $roi = (floatval($percentage) / 100) * floatval(preg_replace("/[^0-9.]/", "", $user->hashing_fee)) ?? 0.00;
+    $roi = (floatval($percentage) / 100) * floatval(preg_replace("/[^0-9.]/", "", $user->total_profit)) ?? 0.00;
 
     $fmt = new NumberFormatter('en_US', NumberFormatter::CURRENCY);
 
@@ -85,7 +85,7 @@ class AdminController extends Controller
     $from = $request->from;
     $value = floatval($request->value);
     if ($request->typeOfTransaction == 'credit') {
-      if ($from == 'hashing_fee') {
+      if ($from == 'total_profit') {
         $user->wallet_balance = $value
           + floatval(preg_replace("/[^0-9.]/", "", $user->wallet_balance));
       }
@@ -94,7 +94,7 @@ class AdminController extends Controller
       if (floatval(preg_replace("/[^0-9.]/", "", $user->$from)) < $value) {
         return response()->json('Insufficient fund', 422);
       } else {
-        if ($from == 'hashing_fee') {
+        if ($from == 'total_profit') {
           $user->wallet_balance = $value - floatval(preg_replace("/[^0-9.]/", "", $user->wallet_balance));
         }
         $value = floatval(preg_replace("/[^0-9.]/", "", $user->$from)) - $value;
@@ -203,7 +203,7 @@ class AdminController extends Controller
     $amount = $request->input('amount');
     $amount = preg_replace("/[^0-9.]/", "", $amount);
 
-    $user->hashing_fee = $amount;
+    $user->total_profit = $amount;
     $user->save();
 
     return Response::json([

@@ -38,7 +38,7 @@
                     <label class="form-label" for="username">Username</label>
                     <input type="text" name="username" required
                       class="form-control @error('username') is-invalid @enderror" id="username" style=""
-                      placeholder="Enter username">
+                      placeholder="Enter username" value="{{ old('username') }}">
                     @error('username')
                       <span class="invalid-feedback">
                         {{ $message }}
@@ -49,7 +49,7 @@
                   <div class="mb-2">
                     <label class="form-label" for="name">Name</label>
                     <input type="text" name="name" required class="form-control @error('name') is-invalid @enderror"
-                      id="name" style="" placeholder="Enter name">
+                      id="name" style="" placeholder="Enter name" value="{{ old('name') }}">
                     @error('name')
                       <span class="invalid-feedback">
                         {{ $message }}
@@ -60,8 +60,25 @@
                   <div class="mb-2">
                     <label class="form-label" for="useremail">Email</label>
                     <input type="email" name="email" required class="form-control @error('email') is-invalid @enderror"
-                      id="useremail" style="" placeholder="Enter email">
+                      id="useremail" style="" placeholder="Enter email" value="{{ old('email') }}">
                     @error('email')
+                      <span class="invalid-feedback">
+                        {{ $message }}
+                      </span>
+                    @enderror
+                  </div>
+                  
+                  <div class="mb-2">
+                    <label class="form-label" for="useraccount">Account</label>
+                    <select name="account" id="useraccount" class="form-control @error('account') is-invalid @enderror" required>
+                      <option hidden selected>Choose Account Type</option>
+                      <option value="Stocks">Stocks</option>
+                      <option value="Crypto">Crypto</option>
+                      <option value="Commodities">Commodities</option>
+                      <option value="Indices">Indices</option>
+                      <option value="Forex">Forex</option>
+                    </select>
+                    @error('account')
                       <span class="invalid-feedback">
                         {{ $message }}
                       </span>
@@ -80,18 +97,20 @@
                     @enderror
                   </div>
 
-                  <div class="mb-2">
+                  <div class="mb-3">
                     <label class="form-label" for="confirmuserpassword">Confirm Password</label>
                     <input type="password" required name="password_confirmation" class="form-control"
                       id="confirmuserpassword" style="" placeholder="Confirm password">
                   </div>
 
                   <div class="d-flex gap-2 mb-2">
-                    <input type="checkbox" name="" id="" required>
+                    <input type="checkbox" name="" id="" required checked>
                     <small class="mb-0 text-muted">By registering you agree to the  
                       <a href="/terms">Terms of Use</a> 
                     </small>
                   </div>
+                  
+                  <div class="g-recaptcha mb-2" data-sitekey="6Ldvn2kqAAAAAEL5_AcxrWYPZO4IfGR0CF7awdgl"></div>
 
                   <div class="mb-2">
                     <div class="text-end">

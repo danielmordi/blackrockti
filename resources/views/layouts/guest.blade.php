@@ -30,7 +30,7 @@
     <!-- MAIN JS -->
     <script src="{{ asset('build/assets/authentication-main.js') }}"></script>
 
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
 </head>

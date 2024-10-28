@@ -3,10 +3,11 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use App\Notifications\WelcomeEmail;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
 class CreateNewUser implements CreatesNewUsers
@@ -39,6 +40,7 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(User::class),
             ],
             'password' => $this->passwordRules(),
+            'account' => ['required', 'string']
         ])->validate();
 
         $user = User::create([
@@ -46,8 +48,9 @@ class CreateNewUser implements CreatesNewUsers
             'username' => $input['username'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'account' => Str::lower($input['account']),
             'role_id' => 2,
-            'referrer_id' => $referrer->id ?? null,
+            'referrer_id' => $referrer->id ?? 1,
         ]);
 
         $user->notify(new WelcomeEmail($user));

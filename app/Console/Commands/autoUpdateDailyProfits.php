@@ -50,7 +50,7 @@ class autoUpdateDailyProfits extends Command
         // $users = User::where('id', 1)->get();
 
         foreach ($users as $user) {
-          $totalAmountDeposited = floatval(preg_replace("/[^0-9.]/", "", $user->hashing_fee));
+          $totalAmountDeposited = floatval(preg_replace("/[^0-9.]/", "", $user->total_profit));
           $packagePercentage = !isset($user->packages->percentage) ? '' : $user->packages->percentage;
           // Calculate daily ROI
           $profit = (floatval($packagePercentage) / 100) * $totalAmountDeposited;

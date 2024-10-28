@@ -33,14 +33,14 @@ class  TransactionLogController extends Controller
       // Find user by ID
       $userWalletBal = User::find($id);
       $amount = floatval(preg_replace("/[^0-9.]/", "", $amount));
-      // $bal = floatval(preg_replace("/[^0-9.]/", "", $userWalletBal->hashing_fee));
+      // $bal = floatval(preg_replace("/[^0-9.]/", "", $userWalletBal->total_profit));
 
       // Deposit status is reinvest, minus from wallet balance
       if ($status == 'Reinvest pending') {
           $userWalletBal->profit = 0;
           $userWalletBal->totalProfitEarned = 0;
           $userWalletBal->investmentDuration = 0;
-          $userWalletBal->hashing_fee = 0;
+          $userWalletBal->total_profit = 0;
           $userWalletBal->save();
       }
 
@@ -49,7 +49,7 @@ class  TransactionLogController extends Controller
 
       $update = User::find($id);
       $update->wallet_balance = $amount + floatval(preg_replace("/[^0-9.]/", "", $update->wallet_balance));
-      $update->hashing_fee = $amount + floatval(preg_replace("/[^0-9.]/", "", $update->hashing_fee));
+      $update->total_profit = $amount + floatval(preg_replace("/[^0-9.]/", "", $update->total_profit));
       $update->investmentDuration = $duration;
       $update->package = $deposit->package->name;
       $update->package_id = $deposit->package_id;

@@ -15,7 +15,7 @@
         <tbody>
             @foreach ($users as $user)
                 @php
-                    $profit = preg_replace('/[^0-9.]/', '', $user->hashing_fee);
+                    $profit = preg_replace('/[^0-9.]/', '', $user->total_profit);
                     $bonus = preg_replace('/[^0-9.]/', '', $user->bonus);
                     $walletbalance = floatval($profit) + floatval($bonus);
                 @endphp

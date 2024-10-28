@@ -102,7 +102,7 @@
                                                         <label for="choose">Choose balance to credit/debit</label>
                                                         <select name="from" id="from" class="form-select">
                                                             <option value="" selected disabled>Choose</option>
-                                                            <option value="hashing_fee">Deposit</option>
+                                                            <option value="total_profit">Deposit</option>
                                                             <option value="bonus">Bonus</option>
                                                             <option value="totalProfitEarned ">Profit earned</option>
                                                             <option value="token">Token</option>

@@ -65,7 +65,7 @@
                     <div class="main-logo col-xs-12 col-md-3 col-md-2 col-lg-2 hidden-xs">
                         <a href="/">
                             <img id="logo" class="img-responsive" src="{{ asset('assets/images/2.png') }}"
-                                alt="logo">
+                                alt="logo" style="max-width: 190px !important;">
                         </a>
                     </div>
                     <!-- Logo Ends -->

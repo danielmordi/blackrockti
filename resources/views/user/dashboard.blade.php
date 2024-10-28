@@ -95,7 +95,7 @@
                                                     <div>
                                                         <span class="d-block text-muted">Amount Invested</span>
                                                         <span
-                                                            class="fs-16 fw-semibold">{{ Auth::user()->deposit == null ? currency_converter(0) : currency_converter(Auth::user()->hashing_fee) }}</span>
+                                                            class="fs-16 fw-semibold">{{ Auth::user()->deposit == null ? currency_converter(0) : currency_converter(Auth::user()->total_profit) }}</span>
                                                     </div>
                                                 </div>
                                             </div>

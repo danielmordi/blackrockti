@@ -24,17 +24,14 @@ class User extends Authenticatable
         'password',
         'role_id',
         'package',
-        'package_id',
+        'account',
         'wallet_balance',
         'bonus',
-        'hashing_fee',
-        'profit',
+        'total_profit',
         'referrer_id',
-        'token',
-        'total_value',
-        'market_value',
-        'yield',
-        'dividend'
+        'kyc',
+        'isKycUploaded',
+        'is_activated',
     ];
 
     /**

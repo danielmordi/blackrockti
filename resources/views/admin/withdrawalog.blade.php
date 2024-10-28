@@ -45,7 +45,7 @@
                                         <td>{{ $log->amount }}</td>
                                         <td>{{ $log->coin->name ?? '' }}</td>
                                         <td>{{ $log->wallet_id }}</td>
-                                        <td>{{ $log->withdraw_from == 'hashing_fee' ? 'Profits' : $log->withdraw_from }}
+                                        <td>{{ $log->withdraw_from == 'total_profit' ? 'Profits' : $log->withdraw_from }}
                                         </td>
                                         <td>
                                             <div style="letter-spacing: 1.3px"
