@@ -33,7 +33,7 @@ class CreateUsersTable extends Migration
       $table->string('kyc')->nullable();
       $table->string('isKycUploaded')->default('false')->nullable();
       $table->string('is_activated')->default('false')->nullable();
-      $table->foreignId('referrer_id')->constrained('users')->cascadeOnDelete()->nullOnDelete()->nullable();
+      $table->foreignId('referrer_id')->constrained('users')->cascadeOnDelete();
       $table->rememberToken();
       $table->timestamps();
     });
