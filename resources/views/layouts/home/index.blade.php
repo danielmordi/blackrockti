@@ -64,8 +64,8 @@
                     <!-- Logo Starts -->
                     <div class="main-logo col-xs-12 col-md-3 col-md-2 col-lg-2 hidden-xs">
                         <a href="/">
-                            <img id="logo" class="img-responsive" src="{{ asset('assets/images/2.png') }}"
-                                alt="logo" style="max-width: 190px !important;">
+                            <img id="logo" class="img-responsive" src="{{ asset('assets/images/2.png') }}" alt="logo"
+                                style="max-width: 190px !important;">
                         </a>
                     </div>
                     <!-- Logo Ends -->
@@ -105,8 +105,8 @@
                     <div class="site-nav-inner">
                         <!-- Logo For ONLY Mobile display Starts -->
                         <a class="logo-mobile" href="/">
-                            <img id="logo-mobile" class="img-responsive"
-                                src="{{ asset('assets/images/2.png') }}" alt="">
+                            <img id="logo-mobile" class="img-responsive" src="{{ asset('assets/images/2.png') }}"
+                                alt="">
                         </a>
                         <!-- Logo For ONLY Mobile display Ends -->
                         <!-- Toggle Icon for Mobile Starts -->
@@ -263,7 +263,8 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <!-- Copyright Text Starts -->
-                            <p class="text-center">Copyright © {{ now()->year }} {{ config('app.name') }} All Rights Reserved</p>
+                            <p class="text-center">Copyright © {{ now()->year }} {{ config('app.name') }} All Rights
+                                Reserved</p>
                             <!-- Copyright Text Ends -->
                         </div>
                     </div>
@@ -314,25 +315,19 @@
             }, 10000);
         </script>
 
-        <!-- Smartsupp Live Chat script -->
+        <!--Start of Tawk.to Script-->
         <script type="text/javascript">
-            var _smartsupp = _smartsupp || {};
-            _smartsupp.key = '89f8da30c65d30b73115b7469d78002a215c6256';
-            window.smartsupp || (function(d) {
-                var s, c, o = smartsupp = function() {
-                    o._.push(arguments)
-                };
-                o._ = [];
-                s = d.getElementsByTagName('script')[0];
-                c = d.createElement('script');
-                c.type = 'text/javascript';
-                c.charset = 'utf-8';
-                c.async = true;
-                c.src = 'https://www.smartsuppchat.com/loader.js?';
-                s.parentNode.insertBefore(c, s);
-            })(document);
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/671fe5a42480f5b4f59545c5/1iba9i3f5';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
         </script>
-        <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+        <!--End of Tawk.to Script-->
 
     </div>
     <!-- Wrapper Ends -->
