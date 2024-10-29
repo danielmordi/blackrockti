@@ -69,6 +69,8 @@
                                                     me</label>
                                             </div>
                                         </div>
+                                        <div class="g-recaptcha mb-2" data-sitekey="6Ldvn2kqAAAAAEL5_AcxrWYPZO4IfGR0CF7awdgl"></div>
+                                        
                                         <div class="col-sm-6 text-end">
                                             <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log
                                                 In
